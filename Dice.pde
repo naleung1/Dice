@@ -1,9 +1,4 @@
-Die one;
-Die two;
-Die three;
-Die four;
-Die five;
-Die six;
+Die bob;
 void setup()
 {
   noLoop();
@@ -13,9 +8,9 @@ void draw()
 {
   background((int) (Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255));//your code here
   for (int i = 0; i < 400; i += 50) {
-    for(int j = 0; j < 400; j += 50){
-    one = new Die (50 + i, 50 + j);
-    one.show();
+    for (int j = 0; j < 400; j += 50) {
+      bob = new Die (50 + i, 50 + j);
+      bob.show();
     }
   }
 }
@@ -25,11 +20,10 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-  int diceRoll, myX, myY;
+  int myX, myY;
 
   Die(int x, int y) //constructor
   {
-    diceRoll = (int) (Math.random()*6+1);
     myX = x;
     myY = y;//variable initializations here
   }
@@ -42,5 +36,45 @@ class Die //models one single dice cube
     int siz = 50;
     fill((int) (Math.random()*256), (int) (Math.random()*256), (int) (Math.random()*256));
     rect(myX, myY, siz, siz);
+    int diceRoll;
+    diceRoll = (int) (Math.random()*6+1);
+    if (diceRoll==1) {
+
+      ellipse(myX+25, myY+25, 10, 10);
+    } else if (diceRoll==2) {
+
+      ellipse(myX+12.5, myY+25, 10, 10);
+      ellipse(myX+37.5, myY+25, 10, 10);
+    } else if (diceRoll==3) {
+
+
+      ellipse(myX+12.5, myY+25, 10, 10);
+      ellipse(myX+25, myY+25, 10, 10);
+      ellipse(myX+37.5, myY+25, 10, 10);
+    } else if (diceRoll==4) {
+
+
+      ellipse(myX+12.5, myY+12.5, 10, 10);
+      ellipse(myX+37.5, myY+37.5, 10, 10);
+      ellipse(myX+37.5, myY+12.5, 10, 10);
+      ellipse(myX+12.5, myY+37.5, 10, 10);
+    } else if (diceRoll==5) {
+
+
+      ellipse(myX+25, myY+25, 10, 10);
+      ellipse(myX+12.5, myY+12.5, 10, 10);
+      ellipse(myX+37.5, myY+37.5, 10, 10);
+      ellipse(myX+37.5, myY+12.5, 10, 10);
+      ellipse(myX+12.5, myY+37.5, 10, 10);
+    } else if (diceRoll==6) {
+
+
+      ellipse(myX+12.5, myY+12.5, 10, 10);
+      ellipse(myX+25, myY+12.5, 10, 10);
+      ellipse(myX+37.5, myY+12.5, 10, 10);
+      ellipse(myX+12.5, myY+37.5, 10, 10);
+      ellipse(myX+25, myY+37.5, 10, 10);
+      ellipse(myX+37.5, myY+37.5, 10, 10);
+    }
   }
 }

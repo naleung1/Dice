@@ -17,7 +17,7 @@ void draw()
   }
   fill(0);
   textSize(20);
-  text("Total: " + sum, 210, 480);
+  text("Total: " + sum, 210, 483);
 }
 void mousePressed()
 {
@@ -42,7 +42,7 @@ class Die //models one single dice cube
     fill((int) (Math.random()*256), (int) (Math.random()*256), (int) (Math.random()*256));
     rect(myX, myY, siz, siz);
     fill(255);
-    rect(200, 455, 100, 35);
+    rect(200, 458, 100, 35);
     diceRoll = (int) (Math.random()*6+1);
     if (diceRoll==1) {
 

@@ -6,13 +6,18 @@ void setup()
 }
 void draw()
 {
+  int sum = 0;
   background((int) (Math.random()*255), (int) (Math.random()*255), (int) (Math.random()*255));//your code here
   for (int i = 0; i < 400; i += 50) {
     for (int j = 0; j < 400; j += 50) {
       bob = new Die (50 + i, 50 + j);
       bob.show();
+      sum = sum + bob.diceRoll;
     }
   }
+  fill(0);
+  textSize(20);
+  text("Total: " + sum, 210, 480);
 }
 void mousePressed()
 {
@@ -20,7 +25,7 @@ void mousePressed()
 }
 class Die //models one single dice cube
 {
-  int myX, myY;
+  int myX, myY, diceRoll;
 
   Die(int x, int y) //constructor
   {
@@ -36,7 +41,7 @@ class Die //models one single dice cube
     int siz = 50;
     fill((int) (Math.random()*256), (int) (Math.random()*256), (int) (Math.random()*256));
     rect(myX, myY, siz, siz);
-    int diceRoll;
+    fill(255);
     diceRoll = (int) (Math.random()*6+1);
     if (diceRoll==1) {
 
